@@ -1,14 +1,14 @@
 // Arrays.
 
 saboresArray = [
-  "Chocolate",
-  "Chocolate amargo",
-  "Dulce de leche",
-  "Menta Granizada",
-  "Cookie",
-  "Banana Split",
-  "Crema del cielo",
-  "Maracuya",
+  "-Chocolate",
+  "-Chocolate amargo",
+  "-Dulce de leche",
+  "-Menta Granizada",
+  "-Cookie",
+  "-Banana Split",
+  "-Crema del cielo",
+  "-Maracuya",
 ];
 pedidosArray = [];
 sugeridosArray = [];
@@ -62,7 +62,6 @@ function programa() {
   }
 }
 
-
 // Funciones.
 
 function hacerPedido() {
@@ -79,7 +78,10 @@ function hacerPedido() {
   } else {
     const pedido = new Pedidos(nombre, sabor, cantidad);
     pedidosArray.push(pedido);
-    alert("El pedido se mostrara por consola en Ver Pedidos, muchas gracias " + pedido.nombre);
+    alert(
+      "El pedido se mostrara por consola en Ver Pedidos, muchas gracias " +
+        pedido.nombre
+    );
     programa();
   }
 }
@@ -93,10 +95,12 @@ function verPedidos() {
 }
 
 function verSabores() {
-  for (let i = 0; i < saboresArray.length; i++) {
-    console.log(saboresArray[i]);
-  }
-  alert("Los sabores se mostraran por consola, muchas gracias.");
+  let sabores = "";
+  saboresArray.forEach((elemento) => {
+    sabores += elemento + "\n";
+  });
+  alert(`Los sabores se encuentran a continuacion.`);
+  alert(sabores);
 }
 
 function sugerir() {
@@ -110,7 +114,7 @@ function sugerir() {
 
 function verSugeridos() {
   for (let i = 0; i < sugeridosArray.length; i++) {
-    console.log(sugeridosArray[i]);
+    console.log(`Sabor sugerido: ` + sugeridosArray[i]);
   }
   alert("Los sabores sugeridos se mostraran por consola, muchas gracias.");
   programa();
